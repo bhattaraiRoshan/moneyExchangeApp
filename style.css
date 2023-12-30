@@ -1,5 +1,86 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
 body{
 
     background-color: black;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.img-money{
+
+    height: 250px;
+    border-radius: 50%;
+}
+
+h1{
+    color: aqua;
+}
+
+.btn{
+    color: black;
+    background-color: aqua;
+    /* color: white; */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 5px 12px;
+}
+
+.currency{
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.currency select{
+    padding: 10px 20px 10px 10px;
+    appearance: none;
+    border-radius: 10px;
+    font-size: 16px;
+    /* background-color: aqua; */
+    background: transparent;
+    color: white;
+    
+}
+
+option{
+
+    background: black;
+
+}
+
+.currency input{
+    -moz-appearance: textfield;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 1.5rem;
+    text-align: right;
+    outline: none;
+}
+
+.swap-rater{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rate{
+    font-size: 14px;
+    padding: 0 10px;
 }
