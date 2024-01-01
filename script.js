@@ -1,27 +1,14 @@
 const ApiUrl = 'https://v6.exchangerate-api.com/v6/b951616ff58282446c085090/latest/USD';
-const currencyContainer = document.querySelector('#currency-one')
+const currencyContainer = document.querySelector('#currency-one1')
 const exchangeCurrency = document.querySelector('#currency-two')
 const updateTimeElm = document.querySelector('.updateTime');
 const amountOne = document.querySelector('#amount_one')
 const currencyDiv = document.querySelectorAll('.currency')
+const amountTwo = document.querySelector('#amount-two')
+const rateElm = document.querySelector('.rate')
 
 
 
-
-const getCode = () =>{
-
-
-    currencyDiv.forEach((elm)=>{
-        
-        elm.addEventListener('change', (e)=>{
-
-            console.log(e.target);
-
-        })
-    })
-}
-
-getCode()
 
 
 const displayData = (data)=>{
@@ -52,6 +39,45 @@ const displayData = (data)=>{
 
     currencyContainer.innerHTML = str
     exchangeCurrency.innerHTML = str2
+
+    currencyContainer.addEventListener('change', (e)=>{
+        
+        for(let key in CR){
+            
+            if(e.target.value === key){
+                amountOne.value = CR[key]
+            }
+        }
+    
+        
+    })
+
+    amountOne.addEventListener('keyup', (e)=>{
+
+        console.log(e.target.value);
+    })
+
+    exchangeCurrency.addEventListener('change', (e)=>{
+
+        for(let key in CR){
+
+            if(e.target.value === key){
+
+                amountTwo.value = CR[key] * amountOne.value
+            }
+
+
+        }
+
+
+
+    })
+
+    amountTwo.addEventListener('keyup', (e)=>{
+        console.log(e.target.value);
+    })
+
+   
     
     
 
