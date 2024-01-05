@@ -92,11 +92,20 @@ const displayData = (data)=>{
 
 const fetchData = () =>{
 
-    fetch(ApiUrl)
-    .then((response)=> response.json())
-    .then((data)=>{
-        displayData(data)
-    })
+
+    try {
+
+        fetch(ApiUrl)
+        .then((response)=> response.json())
+        .then((data)=>{
+            displayData(data)
+        })
+        
+    } catch (error) {
+
+        console.log(error);
+        
+    }
 }
 
 
